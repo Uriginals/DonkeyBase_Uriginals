@@ -5,7 +5,7 @@
     <ignored path="DonkeyBase.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="$PROJECT_DIR$/Uriginals/uro/settings.py" changelist="5140962b-1347-435c-a9b7-a34ad2e3d742" time="1369221176297" ignored="false" />
-    <file path="/settings.py" changelist="5140962b-1347-435c-a9b7-a34ad2e3d742" time="1369224731226" ignored="false" />
+    <file path="/settings.py" changelist="5140962b-1347-435c-a9b7-a34ad2e3d742" time="1369226440432" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +48,7 @@
       <file leaf-file-name="settings.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/DonkeyBase/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="125" column="23" selection-start="4522" selection-end="4522" vertical-scroll-proportion="0.2766727">
+            <state line="130" column="36" selection-start="4681" selection-end="4681" vertical-scroll-proportion="0.43037975">
               <folding />
             </state>
           </provider>
@@ -186,7 +186,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Benutzerverwaltung" />
+              <option name="myItemId" value="benutzerverwaltung" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -205,6 +205,29 @@
     </key>
   </component>
   <component name="RunManager" selected="Django server.DonkeyBase">
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="DonkeyBase" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
     <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -226,6 +249,26 @@
       <option name="runNoReload" value="false" />
       <option name="useCustomRunCommand" value="false" />
       <option name="customRunCommand" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="DonkeyBase" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="com.intellij.persistence.run.ConsoleRunConfigurationType" factoryName="Query Language Console">
@@ -382,7 +425,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/DonkeyBase/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="125" column="23" selection-start="4522" selection-end="4522" vertical-scroll-proportion="0.2766727">
+        <state line="130" column="36" selection-start="4681" selection-end="4681" vertical-scroll-proportion="0.43037975">
           <folding />
         </state>
       </provider>

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from Benutzerverwaltung.models import *
+from benutzerverwaltung.models import *
 
 class BenutzerAdmin(admin.ModelAdmin):
     list_display = ['benutzername', 'password']
