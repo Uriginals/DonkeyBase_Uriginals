@@ -1,0 +1,11 @@
+{% extends "laborwertverwaltung.html" %}
+
+{% block content %}
+
+    <form action="{{ action_url }}" method="post" accept-charset="utf-8">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <p><input type="submit" value="Speichern"/></p>
+    </form>
+    <a href="/laborwertverwaltung">Zurück zur Übersicht</a>
+{% endblock %}

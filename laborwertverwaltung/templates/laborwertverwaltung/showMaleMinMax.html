@@ -1,0 +1,27 @@
+{% extends "laborwertverwaltung.html" %}
+{% block content %}
+<h2>Alle Male-Min-Max-Werte</h2>
+
+    <table border="1" id="table">
+		<tr>
+			<th>MinMaxID</th>
+            <th>Min-Wert</th>
+            <th>Max-Wert</th>
+            <th></th>
+            <th></th>
+		</tr>
+    {% for minmax in object_list %}
+		<tr>
+			<td>{{ minmax.mmID }}</td>
+            <td>{{ minmax.minWert }}</td>
+            <td>{{ minmax.maxWert }}</td>
+            <td><a href="/laborwertverwaltung/editMinMax/{{ minmax.pk }}"><img src="../../static/laborwertverwaltung/images/edit.png"></a></td>
+            <td><a href="/laborwertverwaltung/delete/{{ minmax.oID }}"><img src="../../static/laborwertverwaltung/images/delete.png"></a></td>
+		</tr>
+    {% endfor %}
+    </table>
+    <br>
+
+
+    <a href="/laborwertverwaltung/admin">zurück zur Übersicht</a>
+{% endblock %}

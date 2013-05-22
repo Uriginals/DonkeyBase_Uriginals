@@ -1,0 +1,23 @@
+{% block content %}
+<h2>Alle Tumorstadien</h2>
+
+    <table border="1" id="table">
+		<tr>
+			<th>Tumorstadium</th>
+			<th>TNM</th>
+            <th></th>
+            <th></th>
+		</tr>
+    {% for operation in object_list %}
+		<tr>
+			<td>{{ operation.bezeichnung }}</td>
+			<td>{{ operation.tnm }}</td>
+            <td><a href="/opverwaltung/editTumor/{{ operation.pk }}"><img src="../../static/OPVerwaltung/images/edit.png"></a></td>
+            <td><a href="/opverwaltung/delete/{{ operation.oID }}"><img src="../../static/OPVerwaltung/images/delete.png"></a></td>
+		</tr>
+    {% endfor %}
+    </table>
+    <br>
+
+    <a href="/opverwaltung">zurück zur Übersicht</a>
+{% endblock %}

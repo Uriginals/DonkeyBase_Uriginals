@@ -1,0 +1,23 @@
+{% extends "laborwertverwaltung.html" %}
+{% block content %}
+<h2>Alle Einheiten</h2>
+
+    <table border="1" id="table">
+		<tr>
+			<th>Bezeichnung</th>
+            <th></th>
+            <th></th>
+		</tr>
+    {% for einheit in object_list %}
+		<tr>
+			<td>{{ einheit.bezeichnung }}</td>
+            <td><a href="/laborwertverwaltung/editEinheit/{{ einheit.pk }}"><img src="../../static/laborwertverwaltung/images/edit.png"></a></td>
+            <td><a href="/laborwertverwaltung/delete/{{ einheit.oID }}"><img src="../../static/laborwertverwaltung/images/delete.png"></a></td>
+		</tr>
+    {% endfor %}
+    </table>
+    <br>
+
+
+    <a href="/laborwertverwaltung/admin">zurück zur Übersicht</a>
+{% endblock %}

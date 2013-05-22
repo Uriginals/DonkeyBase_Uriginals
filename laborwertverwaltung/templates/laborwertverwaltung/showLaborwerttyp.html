@@ -1,0 +1,29 @@
+{% extends "laborwertverwaltung.html" %}
+{% block content %}
+<h2>Alle Laborwerttypen</h2>
+
+    <table border="1" id="table">
+		<tr>
+			<th>Bezeichnung</th>
+			<th>Einheit</th>
+            <th>M-Wert</th>
+            <th>W-Wert</th>
+            <th></th>
+            <th></th>
+		</tr>
+    {% for laborwerttyp in object_list %}
+		<tr>
+			<td>{{ laborwerttyp.bezeichnung }}</td>
+			<td>{{ laborwerttyp.einheit }}</td>
+            <td>{{ laborwerttyp.mWert}}</td>
+            <td>{{ laborwerttyp.wWert }}</td>
+            <td><a href="/laborwertverwaltung/editLaborwerttyp/{{ laborwerttyp.pk }}"><img src="../../static/laborwertverwaltung/images/edit.png"></a></td>
+            <td><a href="/laborwertverwaltung/delete/{{ laborwerttyp.oID }}"><img src="../../static/laborwertverwaltung/images/delete.png"></a></td>
+		</tr>
+    {% endfor %}
+    </table>
+    <br>
+
+
+    <a href="/laborwertverwaltung/admin">zurück zur Übersicht</a>
+{% endblock %}

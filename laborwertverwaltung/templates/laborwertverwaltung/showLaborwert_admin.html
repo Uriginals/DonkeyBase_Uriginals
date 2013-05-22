@@ -1,0 +1,43 @@
+{% extends "laborwertverwaltung.html" %}
+{% block content %}
+<h2>Alle Laborwerte</h2>
+
+    <table border="1" id="table">
+		<tr>
+			<th>LaborwertID</th>
+			<th>Datum</th>
+            <th>Laborwerttyp</th>
+            <th>Wert</th>
+            <th>Wertigkeit</th>
+            <th>Kommentar</th>
+            <th></th>
+            <th></th>
+		</tr>
+    {% for laborwert in object_list %}
+		<tr>
+			<td>{{ laborwert.lID }}</td>
+			<td>{{ laborwert.datum }}</td>
+            <td>{{ laborwert.laborwerttyp}}</td>
+            <td>{{ laborwert.wert }}</td>
+            <td>{{ laborwert.wertigkeit }}</td>
+            <td>{{ laborwert.kommentar }}</td>
+            <td><a href="/laborwertverwaltung/editLaborwert/{{ laborwert.pk }}"><img src="../../static/laborwertverwaltung/images/edit.png"></a></td>
+            <td>
+            {% if laborwert.freigegeben %}
+                <a href="/laborwertverwaltung/toggleLaborwert/{{ laborwert.lID }}">
+                    <img src="../../static/laborwertverwaltung/images/release.png" alt="release">
+                </a>
+            {% else %}
+                 <a href="/laborwertverwaltung/toggleLaborwert/{{ laborwert.lID }}">
+                     <img src="../../static/laborwertverwaltung/images/delete.png" alt="delete">
+                 </a>
+            {% endif %}
+            </td>
+		</tr>
+    {% endfor %}
+    </table>
+    <br>
+
+
+    <a href="/laborwertverwaltung/admin">zurück zur Übersicht</a>
+{% endblock %}

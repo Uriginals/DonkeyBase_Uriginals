@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Studienübersicht{% endblock %}
+{% block content %}
+        {% if latest_studie_list %}
+            <table border="1" id="table">
+                    <tr>
+                        <th>Bezeichnung</th>
+                        <th>Studienart</th>
+                        <th>Datum</th>
+                        <th>Beschreibung</th>
+                    </tr>
+                {% for studie in latest_studie_list %}
+                {% if studie.freigegeben %}
+                    <tr>
+                        <td>{{ studie.bezeichnung }}</td>
+                        <td>{{ studie.studienart }}</td>
+                        <td>{{ studie.datum }}</td>
+                        <td>{{ studie.beschreibung }}</td>
+                    </tr>
+                {% endif %}
+                {% endfor %}
+            </table>
+        {% else %}
+            <p>Keine Studien vorhanden</p>
+        {% endif %}
+{% include "backToMenu.html" %}
+{% endblock %}

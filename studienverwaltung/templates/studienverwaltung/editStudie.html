@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}Studienübersicht{% endblock %}
+{% block content %}
+        {% if latest_studie_list %}
+            <table border="1" id="table">
+                    <tr>
+                        <th>Bezeichnung</th>
+                        <th>Studienart</th>
+                        <th>Datum</th>
+                        <th>Beschreibung</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                {% for studie in latest_studie_list %}
+                    <tr>
+                        <td>{{ studie.bezeichnung }}</td>
+                        <td>{{ studie.studienart }}</td>
+                        <td>{{ studie.datum }}</td>
+                        <td>{{ studie.beschreibung }}</td>
+                        <td>
+                            <a href="/studienverwaltung/editStudie/{{ studie.sID }}"><img src="../../static/studienverwaltung/images//edit.png"></a>
+                        </td>
+                        <td>
+                            {% if studie.freigegeben %}
+                                <a href="deleteStudie/{{ studie.sID }}">
+                                    <img src="../../static/studienverwaltung/images/release.png" alt="release">
+                                </a>
+                            {% else %}
+                                <a href="deleteStudie/{{ studie.sID }}">
+                                    <img src="../../static/studienverwaltung/images/delete.png" alt="delete">
+                                </a>
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <p>Keine Studien vorhanden</p>
+        {% endif %}
+{% include "backToMenu.html" %}
+{% endblock %}

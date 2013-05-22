@@ -1,0 +1,28 @@
+{% block content %}
+<h2>Alle Operationen</h2>
+
+    <table border="1" id="table">
+		<tr>
+			<th>Operationsart</th>
+			<th>Operationsseite</th>
+            <th>Lymphknotenentfernung</th>
+            <th>Lymphknotenseite</th>
+            <th></th>
+            <th></th>
+		</tr>
+    {% for operation in object_list %}
+		<tr>
+			<td>{{ operation.art }}</td>
+			<td>{{ operation.seite }}</td>
+            <td>{{ operation.lymEntf}}</td>
+            <td>{{ operation.lymSeite }}</td>
+            <td><a href="/opverwaltung/editOp/{{ operation.pk }}"><img src="../../static/OPVerwaltung/images/edit.png"></a></td>
+            <td><a href="/opverwaltung/delete/{{ operation.oID }}"><img src="../../static/OPVerwaltung/images/delete.png"></a></td>
+		</tr>
+    {% endfor %}
+    </table>
+    <br>
+
+
+    <a href="/opverwaltung">zurück zur Übersicht</a>
+{% endblock %}

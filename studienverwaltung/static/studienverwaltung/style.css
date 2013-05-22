@@ -1,0 +1,123 @@
+body{
+    background: black url("images/bg.png") repeat;
+}
+
+#img{
+    float: right;
+    height:100px;
+    width:100px;
+    background: transparent url("images/web.png") no-repeat;
+}
+
+#glow{
+    position: absolute;
+    left: 50%;
+    width: 800px;
+    margin-left:-400px;
+    margin-top: 50px;
+}
+
+#header{
+    min-height: 150px;
+    border-bottom-style: solid;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    margin-bottom: 0px;
+    padding: 10px;
+    position: relative;
+    background-color: cornflowerblue;
+    color: black;
+}
+
+#content{
+    font-size: 20px;
+    min-height: 300px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding: 10px;
+    position:relative;
+    background-color: beige;
+}
+
+#content2{
+    font-size: 20px;
+    min-height: 300px;
+    padding: 10px;
+    position:relative;
+    background-color: beige;
+    margin-bottom: 0px;
+}
+
+#footer{
+    font-size: 20px;
+    border-top-style: solid;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    position:relative;
+    padding: 10px;
+    background-color: cornflowerblue;
+}
+
+a:link{
+    color: black;
+    text-decoration: none;
+}
+
+a:hover{
+    font-weight: bolder;
+}
+
+a:visited{
+    color: black;
+    text-decoration: none;
+}
+
+table {border-collapse: collapse;
+border: 0px solid #000;
+font: normal 80%/140% arial, helvetica, sans-serif;
+color: #555;
+background: #fff;}
+
+td, th {border: 1px dotted #bbb;
+padding: .5em;}
+
+caption {padding: 0 0 .5em 0;
+text-align: left;
+font-size: 1.4em;
+font-weight: bold;
+text-transform: uppercase;
+color: #333;
+background: transparent;}
+
+table a {padding: 1px;
+text-decoration: none;
+font-weight: bold;
+background: transparent;}
+
+table a:link {border-bottom: 0px dashed #ddd;
+color: #000;text-decoration: none;}
+
+
+table a:visited {border-bottom: 0px dashed #ccc; text-decoration: none;
+color: #808080;}
+
+table a:hover {border-bottom: 0px dashed #bbb;
+color: #666;}
+
+thead th, tfoot th {border: 2px solid #000;
+text-align: left;
+font-size: 1.2em;
+font-weight: bold;
+color: #333;
+background: transparent;}
+
+tfoot td {border: 2px solid #000;}
+
+tbody th, tbody td {vertical-align: top;
+text-align: left;}
+
+tbody th {white-space: nowrap;}
+
+.odd {background: #fcfcfc;}
+
+tbody tr:hover {background: #fafafa;}

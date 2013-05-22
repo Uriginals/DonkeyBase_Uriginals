@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}Studienverwaltung{% endblock %}
+{% block content %}
+    <table>
+        <tr>
+            <th>
+                <h3>User Bereich</h3>
+            </th>
+            <th>
+                <h3>Admin Bereich</h3>
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <h4>Studien</h4>
+                    <a href="/studienverwaltung/showStudie">Studien Anzeigen</a><br>
+            </td>
+            <td>
+                <h4>Studienverwaltung</h4>
+                        <a href="/studienverwaltung/createStudieForm">Studien anlegen</a><br>
+                        <a href="/studienverwaltung/editStudie">Studien bearbeiten</a><br>
+                        <a href="/studienverwaltung/createStudieArtForm">Studienart anlegen</a>
+
+            </td>
+        </tr>
+    </table>
+{% endblock %}

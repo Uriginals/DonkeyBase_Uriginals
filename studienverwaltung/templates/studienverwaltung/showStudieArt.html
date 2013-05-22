@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Studienarten{% endblock %}
+{% block content %}
+        {% if latest_studieArt_list %}
+            <table border="1" id="table">
+                    <tr>
+                        <th>Bezeichnung</th>
+                    </tr>
+                {% for studieArt in latest_studieArt_list %}
+                    <tr>
+                        <td>{{ studieArt.bezeichnung }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <p>Keine Studien vorhanden</p>
+        {% endif %}
+{% include "backToMenu.html" %}
+{% endblock %}

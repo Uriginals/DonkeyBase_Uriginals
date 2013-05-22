@@ -1,0 +1,27 @@
+{% extends "laborwertverwaltung.html" %}
+{% block content %}
+<h2>Alle Wertigkeiten</h2>
+
+    <table border="1" id="table">
+		<tr>
+			<th>WertigkeitsID</th>
+			<th>Bezeichnung</th>
+            <th>Wert</th>
+            <th></th>
+            <th></th>
+		</tr>
+    {% for wertigkeit in object_list %}
+		<tr>
+			<td>{{ wertigkeit.wID }}</td>
+			<td>{{ wertigkeit.bezeichnung }}</td>
+            <td>{{ wertigkeit.wert}}</td>
+            <td><a href="/laborwertverwaltung/editWertigkeit/{{ wertigkeit.pk }}"><img src="../../static/laborwertverwaltung/images/edit.png"></a></td>
+            <td><a href="/laborwertverwaltung/delete/{{ wertigkeit.oID }}"><img src="../../static/laborwertverwaltung/images/delete.png"></a></td>
+		</tr>
+    {% endfor %}
+    </table>
+    <br>
+
+
+    <a href="/laborwertverwaltung/admin">zurück zur Übersicht</a>
+{% endblock %}
