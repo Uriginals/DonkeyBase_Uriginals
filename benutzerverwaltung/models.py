@@ -1,34 +1,34 @@
 from django.db import models
-
+from django.contrib.auth.models import *
 # Create your models here.
 class Gruppe(models.Model):
-    grpID = models.IntegerField(primary_key=True)
-    name = models.CharField(max_length=255)
+    grpID = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=200)
     def __str__(self):  # Python 3: def __str__(self):
         return self.name
 
-class Benutzer(models.Model):
-    benutzername = models.CharField(max_length=100, primary_key=True)
-    password = models.CharField(max_length=100)
-    grpID = models.ManyToManyField(Gruppe, blank=True)
-    def __str__(self):  # Python 3: def __str__(self):
-        return self.benutzername
-
-class BerechtigungBeschreibung(models.Model):
+class Berechtigung_Beschreibung(models.Model):
     berechtigung = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=255)
     def __str__(self):  # Python 3: def __str__(self):
         return self.name
 
-class TabellenBerechtigung(models.Model):
-    tbID = models.IntegerField(primary_key=True)
-    tabellen = models.CharField(max_length=255)
-    perm = models.ForeignKey(BerechtigungBeschreibung)
+class Tabelle_Berechtigung(models.Model):
+    tbID = models.AutoField(primary_key=True)
+    tabelle = models.CharField(max_length=255)
+    rID = models.IntegerField()
+    perm = models.ForeignKey(Berechtigung_Beschreibung)
     def __str__(self):  # Python 3: def __str__(self):
-        return self.tabellen
+        return self.tabelle + ' ' + str(self.perm)
 
-class Berechtigung(models.Model):
+class Gruppe_Berechtigung(models.Model):
     grpID = models.ForeignKey(Gruppe)
-    tbID = models.ForeignKey(TabellenBerechtigung)
-    def __str__(self):  # Python 3: def __str__(self):
+    tbID = models.ForeignKey(Tabelle_Berechtigung)
+    def __int__(self):  # Python 3: def __str__(self):
         return self.tbID
+
+class User_Gruppe(models.Model):
+    grpID = models.ForeignKey(Gruppe)
+    bnID = models.ManyToManyField(User)
+    def __str__(self):  # Python 3: def __str__(self):
+        return str(self.bnID)
