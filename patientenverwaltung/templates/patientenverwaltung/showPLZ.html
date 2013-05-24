@@ -1,0 +1,25 @@
+{% extends "patientenverwaltung.html" %}
+{% block content %}
+<h2>Alle Patienten</h2>
+
+    <table border="1" id="table">
+		<tr>
+			<th>PLZ</th>
+            <th>Ort</th>
+            <th></th>
+            <th></th>
+		</tr>
+    {% for laborwert in object_list %}
+		<tr>
+            <td>{{ laborwert.plz }}</td>
+			<td>{{ laborwert.stadt }}</td>
+            <td><a href="/patientenverwaltung/editPLZ/{{ laborwert.pk }}"><img src="../../static/patientenverwaltung/images/edit.png"></a></td>
+            <td><a href="/patientenverwaltung/delete/{{ laborwert.pk }}"><img src="../../static/patientenverwaltung/images/delete.png"></a></td>
+		</tr>
+    {% endfor %}
+    </table>
+    <br>
+
+
+    <a href="/patientenverwaltung/admin">zurück zur Übersicht</a>
+{% endblock %}

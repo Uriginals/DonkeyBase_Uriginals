@@ -1,0 +1,23 @@
+{% extends "laborwertverwaltung.html" %}
+
+{% block content %}
+
+    <h2>Benutzer - Menü</h2>
+
+    <h3>Erstellung</h3>
+    <a href="/patientenverwaltung/erstellenPatient">Einen Patienten erstellen</a><br>
+    <a href="/patientenverwaltung/erstellenPLZ">Eine PLZ erstellen</a><br>
+    <a href="/patientenverwaltung/erstellenHausarzt">Einen Hausarzt erstellen</a><br>
+    <a href="/patientenverwaltung/erstellenPatientenArt">Eine Patientenart erstellen</a><br>
+    <a href="/patientenverwaltung/erstellenEigenschaft">Eine Patienten-Eigenschaft erstellen</a><br>
+    <a href="/patientenverwaltung/erstellenZusatzID">Eine Patienten-Zusatz-ID erstellen</a><br>
+
+    <h3>Anzeige</h3>
+    <a href="/patientenverwaltung/anzeigePatient_admin">Alle Patienten anzeigen</a><br>
+    <a href="/patientenverwaltung/anzeigePLZ">Alle PLZs anzeigen</a><br>
+    <a href="/patientenverwaltung/anzeigeHausarzt">Alle Hausärzte anzeigen</a><br>
+    <a href="/patientenverwaltung/anzeigePatientenArt">Alle Patientenarten anzeigen</a><br>
+    <a href="/patientenverwaltung/anzeigeEigenschaft">Alle Eigenschaften anzeigen</a><br>
+    <a href="/patientenverwaltung/anzeigeZusatzID">Alle ZusatzIDs anzeigen</a><br>
+
+{% endblock %}

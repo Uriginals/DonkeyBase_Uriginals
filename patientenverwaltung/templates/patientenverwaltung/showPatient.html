@@ -1,0 +1,27 @@
+{% extends "patientenverwaltung.html" %}
+{% block content %}
+<h2>Alle Patienten</h2>
+
+    <table border="1" id="table">
+		<tr>
+			<th>PatientenID</th>
+			<th>Vorname</th>
+            <th>Nachname</th>
+            <th>Geburtsdatum</th>
+		</tr>
+    {% for laborwert in object_list %}
+		<tr>
+            {% if laborwert.freigegeben %}
+            <td>{{ laborwert.pID }}</td>
+			<td>{{ laborwert.vorname }}</td>
+            <td>{{ laborwert.nachname}}</td>
+            <td>{{ laborwert.gebDatum }}</td>
+            {% endif %}
+		</tr>
+    {% endfor %}
+    </table>
+    <br>
+
+
+    <a href="/patientenverwaltung">zurück zur Übersicht</a>
+{% endblock %}
