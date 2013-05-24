@@ -4,6 +4,7 @@ from django.contrib.auth.models import *
 class Gruppe(models.Model):
     grpID = models.AutoField(primary_key=True)
     name = models.CharField(max_length=200)
+    bnID = models.ManyToManyField(User, blank=True)
     def __str__(self):  # Python 3: def __str__(self):
         return self.name
 
@@ -26,9 +27,3 @@ class Gruppe_Berechtigung(models.Model):
     tbID = models.ForeignKey(Tabelle_Berechtigung)
     def __int__(self):  # Python 3: def __str__(self):
         return self.tbID
-
-class User_Gruppe(models.Model):
-    grpID = models.ForeignKey(Gruppe)
-    bnID = models.ManyToManyField(User)
-    def __str__(self):  # Python 3: def __str__(self):
-        return str(self.bnID)
