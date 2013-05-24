@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% load set_var %}
+{% load staticfiles %}
+{% block title %}DonkeyBase{% endblock %}
+{% block WelcomeUser %}{% endblock %}
+{% block content %}
+<script language="Javascript">
+function SelectMoveRows(leftBox,rightBox)
+{
+    var SelID='';
+    var SelText='';
+    // Move rows from left to right from bottom to top
+    for (i=leftBox.options.length - 1; i>=0; i--)
+    {
+        if (leftBox.options[i].selected == true)
+        {
+            SelID=leftBox.options[i].value;
+            SelText=leftBox.options[i].text;
+            var newRow = new Option(SelText,SelID);
+            rightBox.options[rightBox.length]=newRow;
+            leftBox.options[i]=null;
+        }
+    }
+    SelectSort(rightBox);
+}
+function SelectSort(SelList)
+{
+    var ID='';
+    var Text='';
+    for (x=0; x < SelList.length - 1; x++)
+    {
+        for (y=x + 1; y < SelList.length; y++)
+        {
+            if (SelList[x].text > SelList[y].text)
+            {
+                // Swap rows
+                ID=SelList[x].value;
+                Text=SelList[x].text;
+                SelList[x].value=SelList[y].value;
+                SelList[x].text=SelList[y].text;
+                SelList[y].value=ID;
+                SelList[y].text=Text;
+            }
+        }
+    }
+}
+</script>
+<form name="gruppeUser">
+<table border="0" cellpadding="3" cellspacing="0">
+    <tr>
+        <td colspan="3">
+            Name: <input type="text" value="{{ gruppe_ID.name }}" name="name">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <select name="leftBox" size="9" MULTIPLE>
+                {% for userNotIn in userNotInGrp %}
+                    <option value="{{ userNotIn }}"> {{ userNotIn }}</option>
+                {% endfor %}
+            </select>
+        </td>
+        <td align="center" valign="middle">
+            <input type="Button" value="Hinzufügen >>" onClick="SelectMoveRows(document.gruppeUser.leftBox,document.gruppeUser.rightBox)"><br>
+            <br>
+            <input type="Button" value="<< Entfernen" onClick="SelectMoveRows(document.gruppeUser.rightBox,document.gruppeUser.leftBox)">
+
+        </td>
+        <td>
+            <select name="rightBox" size="9" MULTIPLE>
+              {% for userIn in userInGrp %}
+                <option value="{{ userIn }}">{{ userIn }}</option><br>
+              {% endfor %}
+            </select>
+        </td>
+    </tr>
+</table>
+</form>
+{% endblock %}
