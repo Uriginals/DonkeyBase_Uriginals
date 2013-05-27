@@ -7,23 +7,29 @@ from benutzerverwaltung.models import *
 
 # Create your views here
 def loginView(request):
-    if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
-        user = authenticate(username=username, password=password)
-        if user is not None:
-            if user.is_active:
-                login(request, user)
-                # Redirect to a success page.
-                return main_view(request)
+    if not request.user.is_authenticated():
+        if request.method == 'POST':
+            username = request.POST['username']
+            password = request.POST['password']
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                if user.is_active:
+                    login(request, user)
+                    # Redirect to a success page.
+                    return main_view(request)
+                else:
+                    # Return a 'disabled account' error message
+                    return HttpResponseRedirect('/benutzerverwaltung/loginFault')
             else:
-                # Return a 'disabled account' error message
+                # Return an 'invalid login' error message.
                 return HttpResponseRedirect('/benutzerverwaltung/loginFault')
         else:
-            # Return an 'invalid login' error message.
-            return HttpResponseRedirect('/benutzerverwaltung/loginFault')
+             return render(request, 'benutzerverwaltung/login.html')
     else:
-        return render(request, 'benutzerverwaltung/login.html')
+        return render(request, 'index.html')
+
+def index(request):
+    return render(request, 'benutzerverwaltung/index.html')
 
 def logoutView(request):
     logout(request)
@@ -67,5 +73,21 @@ def editGruppe(request, grpID):
         if vorhanden == False:
             userNotInGrp.append(allUser.username)
 
+    if request.method == 'POST':
+        gruppenName = request.POST['name']
+        gruppe_ID.name = gruppenName
+        gruppe_ID.save()
+        peopleInGroup = request.POST.getlist('inGroup[]')
+        peopleNotInGroup = request.POST.getlist('notInGroup[]')
+
+        for pplNotInG in peopleNotInGroup:
+            gruppe_ID.bnID.remove(User.objects.get(username=pplNotInG))
+
+        for pplInG in peopleInGroup:
+             gruppe_ID.bnID.add(User.objects.get(username=pplInG))
+
+        return HttpResponseRedirect('/benutzerverwaltung/showGruppe')
+
     contex = Context({'gruppe':gruppe, 'gruppe_ID':gruppe_ID, 'userNotInGrp': userNotInGrp, 'userInGrp':userInGrp})
     return render(request, 'benutzerverwaltung/editGruppe.html', contex)
+

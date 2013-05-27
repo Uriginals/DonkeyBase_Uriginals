@@ -1,9 +1,24 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-</head>
-<body>
-
-</body>
-</html>
+{% block content %}
+    <table>
+        <tr>
+            <th>
+                <h3>User Bereich</h3>
+            </th>
+            <th>
+                <h3>Admin Bereich</h3>
+            </th>
+        </tr>
+        <tr>
+            <td>
+               <a href="#">Benutzer Ändern</a><br>
+               <a href="#">Passwort Ändern</a><br>
+            </td>
+            <td>
+               <a href="#">Gruppen hinzufügen</a><br>
+               <a href="/benutzerverwaltung/showGruppe">Gruppen bearbeiten</a><br>
+               <a href="#">Benutzer hinzufügen</a><br>
+               <a href="#">Benutzer bearbeiten</a><br>
+            </td>
+        </tr>
+    </table>
+{% endblock %}
