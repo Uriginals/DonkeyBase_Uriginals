@@ -1,11 +1,7 @@
-{% extends "laborwertverwaltung.html" %}
+{% extends "simpel.html" %}
 
 {% block content %}
 
-    <form action="{{ action_url }}" method="post" accept-charset="utf-8">
-        {{ form.as_p }}
-        {% csrf_token %}
-        <p><input type="submit" value="Speichern"/></p>
-    </form>
+    {% include "form.html" %}
     <a href="/patientenverwaltung">Zurück zur Übersicht</a>
 {% endblock %}

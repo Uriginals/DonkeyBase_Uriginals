@@ -15,4 +15,8 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
     url(r'^studienverwaltung/', include('studienverwaltung.urls', namespace="studienverwaltung")),
+    url(r'^patientenverwaltung/', include('patientenverwaltung.urls', namespace="patientenverwaltung")),
+    url(r'^opverwaltung/', include('opverwaltung.urls', namespace="opverwaltung")),
+    url(r'^laborwertverwaltung/', include('laborwertverwaltung.urls', namespace="laborwertverwaltung")),
+    url(r'^benutzerverwaltung/', include('benutzerverwaltung.urls', namespace="benutzerverwaltung")),
 )

@@ -124,6 +124,10 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'studienverwaltung',
     'benutzerverwaltung',
+    'opverwaltung',
+    'patientenverwaltung',
+    'laborwertverwaltung',
+    'benutzerverwaltung',
 )
 
 # A sample logging configuration. The only tangible logging
